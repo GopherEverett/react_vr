@@ -15,5 +15,17 @@ In early 2017 Facebook and Occulus released a JS library built on top of React t
 
 ### My Impressions
 
-After the initial setup I quickly realized I needed some exposure to React Native to utilize React 360.
+After the initial setup I quickly realized I needed some exposure to React Native to utilize React 360. The biggest issue was learning the native components such as View, Text, Image. Aside from that it is almost the same as React.js
+One interesting component is the VrButton which detects click-type actions across a variety of input devices; listening for key-down followed by key-up events, while the cursor remains on the component. By default it has no appearance and is a wrapper to listen for events, however it can styled like a view.
 
+### To run this example
+
+- Clone this repository
+- Cd into Hello360
+- Install dependencies with `npm install`
+- `npm start`
+- open browser at `http://localhost:8081/index.html`
+
+### Resources
+
+The single best resource is the React 360 docs provided by Facebook at https://facebook.github.io/react-360/

@@ -4,10 +4,21 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  VrButton
 } from 'react-360';
 
 export default class Hello360 extends React.Component {
+  state = {
+    showPic: true
+  }
+
+  toggleShowPic = () => {
+    this.setState((state) => {
+      return ({ showPic: !state.showPic })
+    })
+  }
+
   render() {
     let pic = {
       uri: './static_assets/zorro.png'
@@ -19,9 +30,21 @@ export default class Hello360 extends React.Component {
             Welcome to Zorro's Beach!
           </Text>
         </View>
-        <View style={styles.imageBox}>
-          <Image source={pic} style={{ width: 250, height: 300 }} />
-        </View>
+        {this.state.showPic ?
+          <View style={styles.imageBox}>
+            <Image source={pic} style={{ width: 250, height: 300 }} />
+          </View> :
+          null}
+        <VrButton onClick={this.toggleShowPic} style={styles.btn}>
+          {this.state.showPic ?
+            <Text style={styles.greeting}>
+              Make Cat Go
+            </Text> :
+            <Text style={styles.greeting}>
+              Press for Cat
+            </Text>
+          }
+        </VrButton>
       </View>
     );
   }
@@ -47,6 +70,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
     borderColor: '#639dda',
     borderWidth: 2,
+  },
+  btn: {
+    padding: 5,
+    backgroundColor: '#000000',
+    borderColor: '#639dda',
+    borderWidth: 2,
+    borderRadius: 20,
   },
   greeting: {
     fontSize: 30,

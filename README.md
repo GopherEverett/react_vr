@@ -21,10 +21,10 @@ One interesting component is the VrButton which detects click-type actions acros
 ### To run this example
 
 - Clone this repository
-- Cd into Hello360
+- CD into Hello360 directory
 - Install dependencies with `npm install`
 - `npm start`
-- open browser at `http://localhost:8081/index.html`
+- open browser at http://localhost:8081/index.html
 
 ### Resources
 
